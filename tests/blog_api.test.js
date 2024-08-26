@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
 const Blog = require('../models/blog')
+const blog = require('../models/blog')
 const api = supertest(app)
 
 const initialBlogs = [
@@ -87,6 +88,37 @@ test.only('A invalid blog missing title or url return status 400', async () => {
     .post('/api/blogs')
     .send(newBlog)
     .expect(400)
+})
+
+test.only('A single Blog can be deleted', async () => {
+  const blogsAtStart = await api.get('/api/blogs')
+  const blogToDelete = blogsAtStart.body[0]
+
+  await api
+    .delete(`/api/blogs/${blogToDelete.id}`)
+    .expect(204)
+
+  const blogsAtEnd = await api.get('/api/blogs')
+
+  assert.strictEqual(blogsAtEnd.body.length, blogsAtStart.body.length - 1)
+
+  const titles = blogsAtEnd.body.map(r => r.title)
+  assert(!titles.includes(blogToDelete.title))
+})
+
+test.only ('A single Blog can be updated', async () => {
+  const blogsAtStart = await api.get('/api/blogs')
+  const blogToUpdate = blogsAtStart.body[0]
+  blogToUpdate.title = 'Updated Blog test'
+
+  await api
+    .put(`/api/blogs/${blogToUpdate.id}`)
+    .send(blogToUpdate)
+    .expect(200)
+
+  const blogsAtEnd = await api.get('/api/blogs')
+
+  assert.deepStrictEqual(blogsAtEnd.body[0], blogToUpdate)
 })
 
 after(async () => {
