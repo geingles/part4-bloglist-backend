@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpMzMzMyIsImlkIjoiNjZkNzE1MDAwMDNlZGYxYTczNWEwNGY5IiwiaWF0IjoxNzI1NTMwODM1LCJleHAiOjE3MjU1MzQ0MzV9.NI06SopDH18irikRDChY4yVT7yj0ygLZuOYtUKmNweY
+
+{
+    "title": "Another Blog test with user",
+    "url": "www.fullstackopen.com",
+    "likes": 77
+}

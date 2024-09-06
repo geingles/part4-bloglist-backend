@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/66d98411f91baa9aada247be
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpMzMzMyIsImlkIjoiNjZkNzE1MDAwMDNlZGYxYTczNWEwNGY5IiwiaWF0IjoxNzI1NTM2MTIwLCJleHAiOjE3MjU1Mzk3MjB9.s88B0WKGmSZnLbxDamcSd3Y5Yp370Ca36jCsKRSfyJ0
+
+{
+    "title": "RE Updated blog post with auth",
+    "url": "www.fullstackopen.com",
+    "likes": 22
+}
