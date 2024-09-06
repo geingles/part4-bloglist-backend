@@ -1,0 +1,7 @@
+POST https://part4-bloglist-backend.onrender.com/api/login
+Content-Type: application/json
+
+{
+    "username": "mluukkai3333",
+    "password": "luukkai"
+}

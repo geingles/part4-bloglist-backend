@@ -1,0 +1,9 @@
+POST https://part4-bloglist-backend.onrender.com/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpMzMzMyIsImlkIjoiNjZkNzE1MDAwMDNlZGYxYTczNWEwNGY5IiwiaWF0IjoxNzI1NjE1MzYzLCJleHAiOjE3MjU2MTg5NjN9.WOGbcyq7i6iUFNkRxlIxkZp0mNBAUee_IaJdsCoRIxc
+
+{
+    "title": "Adding new blog at prod server",
+    "url": "www.fullstackopen.com",
+    "likes": 213
+}
